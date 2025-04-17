@@ -1,0 +1,82 @@
+{
+  "name": "time-tracking-todo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A Todo List app with time tracking features",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "electron:dev": "concurrently \"npm run dev\" \"electron .\"",
+    "electron:build": "npm run build && electron-builder --win --mac",
+    "electron:build-win": "npm run build && electron-builder --win",
+    "electron:build-mac": "npm run build && electron-builder --mac",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "daisyui": "^5.0.22",
+    "tailwindcss": "^4.1.4",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.2",
+    "electron": "^35.1.5",
+    "electron-builder": "^26.0.12",
+    "naive-ui": "^2.41.0",
+    "vite": "^6.3.0"
+  },
+  "build": {
+    "appId": "com.example.time-tracking-todo",
+    "productName": "MOODY BLUES Todo List",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "electron/icons/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "忧郁蓝调 Todo"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "electron/icons/mac/icon.icns",
+      "extendInfo": {
+        "CFBundleDocumentTypes": [
+          {
+            "CFBundleTypeName": "Image",
+            "CFBundleTypeRole": "Viewer",
+            "LSItemContentTypes": [
+              "public.image"
+            ],
+            "LSHandlerRank": "Alternate"
+          }
+        ]
+      }
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
+}
