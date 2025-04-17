@@ -10,7 +10,7 @@ function createWindow() {
   // 创建浏览器窗口
   mainWindow = new BrowserWindow({
     width: 900,
-    height: 700,
+    height: 1400,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
