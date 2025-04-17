@@ -2,10 +2,11 @@
   <div class="container">
     <header class="app-header">
 
-      <div id="title-container" class="flex items-center gap-2 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-300">
+      <div id="title-container"
+        class="flex items-center gap-2 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-300"
+        @click="shakeTitle" :class="{ 'shake-animation': isShaking }">
         <img src="./assets/icon/icon.ico" width="40" alt="">
         <h1 id="app-title" class="zcool-kuaile-regular text-4xl">忧郁蓝调 Todo</h1>
-
       </div>
       <div class="timer-running" v-if="activeTimerCount > 0">
         <span class="timer-icon">⏱️</span>
@@ -27,6 +28,10 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import TodoList from './components/TodoList.vue'
+import shakeSound from './assets/sound/shake-sound.mp3'
+
+// 声明音频文件
+const shakeAudio = new Audio(shakeSound)
 
 // 获取TodoList组件的引用
 const todoList = ref(null)
@@ -46,6 +51,20 @@ onMounted(() => {
     }
   }, 1000)
 })
+
+// 控制抖动动画
+const isShaking = ref(false)
+
+const shakeTitle = () => {
+
+  isShaking.value = true
+
+  // 播放抖动音效
+  shakeAudio.play()
+  setTimeout(() => {
+    isShaking.value = false
+  }, 500) // 动画持续时间
+}
 </script>
 
 <style>
@@ -111,5 +130,32 @@ onMounted(() => {
   border-top: 1px solid var(--border-color);
   text-align: center;
   color: #666;
+}
+
+/* 添加抖动动画 */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake-animation {
+  animation: shake 0.5s ease-in-out;
 }
 </style>
