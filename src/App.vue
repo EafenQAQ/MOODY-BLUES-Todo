@@ -2,9 +2,9 @@
   <div class="container">
     <header class="app-header">
 
-      <div class="flex items-center gap-2">
+      <div id="title-container" class="flex items-center gap-2 hover:cursor-pointer hover:scale-110 transition-all ease-in-out duration-300">
         <img src="./assets/icon/icon.ico" width="40" alt="">
-        <h1 class="text-3xl font-semibold">忧郁蓝调 Todo</h1>
+        <h1 id="app-title" class="zcool-kuaile-regular text-4xl">忧郁蓝调 Todo</h1>
 
       </div>
       <div class="timer-running" v-if="activeTimerCount > 0">
@@ -49,6 +49,15 @@ onMounted(() => {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=ZCOOL+KuaiLe&display=swap');
+
+.zcool-kuaile-regular {
+  font-family: "ZCOOL KuaiLe", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 :root {
   --primary-color: #8d64e1;
   --hover-color: #764bcb;
@@ -78,6 +87,8 @@ onMounted(() => {
   color: var(--primary-color);
   margin: 0;
 }
+
+
 
 .timer-running {
   background-color: #ffeb3b;

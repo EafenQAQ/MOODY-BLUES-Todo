@@ -1,5 +1,15 @@
 @import "tailwindcss";
 @plugin "daisyui";
+/* 谷歌字体 */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=ZCOOL+KuaiLe&display=swap');
+
+.zcool-kuaile-regular {
+  font-family: "ZCOOL KuaiLe", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 @theme {
   --color-main: #8d64e1;
   --color-hover: #764bcb;
