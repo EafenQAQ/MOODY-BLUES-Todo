@@ -1,5 +1,6 @@
 <template>
-    <div id="timer-container" class="w-[5rem] text-center">
+    <div id="timer-container"
+        class="w-[8ch] min-w-[8ch] max-w-[8ch] h-[1em] overflow-y-hidden box-border overflow-hidden text-center">
         <div id="timer" class="timer" :class="{ active: isActive }">
             {{ displayTime }}
         </div>
@@ -89,8 +90,12 @@ onUnmounted(() => {
 <style scoped>
 .timer {
     font-family: monospace;
+    font-variant-numeric: tabular-nums;
     font-size: 16px;
     color: #333;
+    white-space: nowrap;
+    line-height: 1;
+
 }
 
 .timer.active {
