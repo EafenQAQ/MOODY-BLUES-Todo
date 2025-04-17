@@ -195,8 +195,9 @@ const formatTime = (ms) => {
 
 .todo-container {
     overflow-y: auto;
-    scrollbar-width: thin;
+    scrollbar-width: none;
     scrollbar-color: #6e4bb9 #e6def8;
+    
 }
 
 .todo-list {
