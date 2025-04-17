@@ -1,5 +1,5 @@
 <template>
-  <div class="container bg-white/80 backdrop-blur-xl border-2 border-dashed border-main/50 rounded-xl">
+  <div class="container bg-white/90 backdrop-blur-sm rounded-xl">
     <header class="app-header">
 
       <div id="title-container"

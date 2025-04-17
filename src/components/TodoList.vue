@@ -31,7 +31,7 @@
             </button>
         </div>
 
-        <div class="todo-container mb-5 bg-main/5 rounded-lg px-10   h-[25rem] w-full">
+        <div class="todo-container mb-5 rounded-lg px-10   h-[25rem] w-full">
             <Transition name="fade" mode="out-in">
                 <div v-if="filteredTodos.length === 0" class="empty-state">
                     暂无任务显示
