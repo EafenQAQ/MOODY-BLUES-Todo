@@ -1,7 +1,7 @@
 <template>
     <div class="todo-list px-5">
         <div class="add-todo">
-            <input class=" outline-none focus:ring-1 transition-all ease duration-150" v-model="newTodo"
+            <input class=" outline-1 outline-dashed focus:ring-2 focus:ring-main transition-all ease duration-150" v-model="newTodo"
                 @keyup.enter="addTodo" placeholder="添加新任务..." type="text" />
             <button @click="addTodo">
                 <svg width="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -31,7 +31,7 @@
             </button>
         </div>
 
-        <div class="todo-container mb-5  h-[30rem] 200 w-full">
+        <div class="todo-container mb-5 bg-main/5 rounded-lg px-10   h-[25rem] w-full">
             <Transition name="fade" mode="out-in">
                 <div v-if="filteredTodos.length === 0" class="empty-state">
                     暂无任务显示
@@ -197,7 +197,7 @@ const formatTime = (ms) => {
     overflow-y: auto;
     scrollbar-width: none;
     scrollbar-color: #6e4bb9 #e6def8;
-    
+
 }
 
 .todo-list {

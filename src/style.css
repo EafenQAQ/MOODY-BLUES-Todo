@@ -26,9 +26,13 @@
   -moz-osx-font-smoothing: grayscale;
   transition: all 0.3s ease-in-out;
   box-sizing: border-box;
-  overflow: auto;
   scrollbar-color: #8d64e1 #f8f8f8;
   scrollbar-width: thin;
+  background-image: url("./assets//backdrop/backdrop.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 body {
