@@ -31,12 +31,12 @@
             </button>
         </div>
 
-        <div class="todo-container w-full">
+        <div class="todo-container h-fit 200 w-full">
             <Transition name="fade" mode="out-in">
                 <div v-if="filteredTodos.length === 0" class="empty-state">
                     暂无任务显示
                 </div>
-                <TransitionGroup v-else class="todos" name="list" tag="div">
+                <TransitionGroup v-else class="todos h-screen p-2" name="list" tag="div">
                     <todo-item v-for="todo in filteredTodos" :key="todo.id" :todo="todo"
                         @toggle-complete="toggleComplete" @toggle-timer="toggleTimer" @delete-todo="deleteTodo" />
                 </TransitionGroup>
@@ -193,14 +193,7 @@ const formatTime = (ms) => {
 <style scoped>
 /* CSS 样式保持不变 */
 
-.todo-container {
 
-    min-height: 600px;
-    /* 设置固定高度，确保布局稳定 */
-    max-height: 600px;
-    /* 可选：限制最大高度 */
-
-}
 
 .todo-list {
     margin-top: 20px;

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bg-blue-200">
         <div class="todo-item" :class="{ completed: todo.completed, tracking: todo.isTracking }">
             <div class="todo-content">
                 <input class="checkbox" type="checkbox" :checked="todo.completed"
