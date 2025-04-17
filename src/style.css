@@ -34,6 +34,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
 }
 
 #app {
@@ -53,4 +54,3 @@ body {
   }
 }
 
-/* 忧郁蓝调：主题色 #8d64e1 */

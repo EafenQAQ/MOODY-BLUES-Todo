@@ -158,4 +158,6 @@ const shakeTitle = () => {
 .shake-animation {
   animation: shake 0.5s ease-in-out;
 }
+
+
 </style>

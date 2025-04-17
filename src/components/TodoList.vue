@@ -31,7 +31,7 @@
             </button>
         </div>
 
-        <div class="todo-container h-fit 200 w-full">
+        <div class="todo-container mb-5  h-[30rem] 200 w-full">
             <Transition name="fade" mode="out-in">
                 <div v-if="filteredTodos.length === 0" class="empty-state">
                     暂无任务显示
@@ -193,7 +193,11 @@ const formatTime = (ms) => {
 <style scoped>
 /* CSS 样式保持不变 */
 
-
+.todo-container {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #6e4bb9 #e6def8;
+}
 
 .todo-list {
     margin-top: 20px;
