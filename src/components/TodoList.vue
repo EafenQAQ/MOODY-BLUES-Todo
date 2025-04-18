@@ -1,8 +1,9 @@
 <template>
     <div class="todo-list px-5">
         <div class="add-todo">
-            <input class=" outline-1 outline-dashed focus:ring-2 focus:ring-main transition-all ease duration-150" v-model="newTodo"
-                @keyup.enter="addTodo" placeholder="添加新任务..." type="text" />
+            <input
+                class=" outline-1 outline-dashed focus:ring-2 focus:ring-main focus:outline-none transition-all ease duration-150"
+                v-model="newTodo" @keyup.enter="addTodo" placeholder="添加新任务..." type="text" />
             <button @click="addTodo">
                 <svg width="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 24 24">
