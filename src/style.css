@@ -41,7 +41,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-
 }
 
 #app {
@@ -61,3 +60,16 @@ body {
   }
 }
 
+@media screen and (max-width: 640px) {
+  :root {
+    font-size: 14px;
+    scrollbar-width: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+  }
+
+  #app{
+    padding: 0;
+  }
+}

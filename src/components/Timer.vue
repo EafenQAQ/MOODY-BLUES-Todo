@@ -1,6 +1,6 @@
 <template>
     <div id="timer-container"
-        class="w-[8ch] min-w-[8ch] max-w-[8ch] h-[1em] box-border text-center">
+        class="w-[8ch] box-border text-center max-sm:mr-2">
         <div id="timer" class="timer" :class="{ active: isActive }">
             {{ displayTime }}
         </div>

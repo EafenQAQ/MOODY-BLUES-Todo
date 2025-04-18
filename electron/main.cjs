@@ -9,8 +9,8 @@ let tray = null;
 function createWindow() {
   // 创建浏览器窗口
   mainWindow = new BrowserWindow({
-    width: 900,
-    height: 1400,
+    width: 700,
+    height: 900,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,

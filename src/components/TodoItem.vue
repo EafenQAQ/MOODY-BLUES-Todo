@@ -1,12 +1,12 @@
 <template>
     <div>
-        <div class="todo-item " :class="{ completed: todo.completed, tracking: todo.isTracking }">
+        <div class="todo-item" :class="{ completed: todo.completed, tracking: todo.isTracking }">
             <div class="todo-content">
                 <input class="checkbox" type="checkbox" :checked="todo.completed"
                     @change="$emit('toggle-complete', todo.id)" />
                 <span class="todo-text">{{ todo.text }}</span>
             </div>
-            <div class="todo-actions">
+            <div id="todo-item-el" class="flex gap-2 items-center  ">
                 <timer :is-active="todo.isTracking" :start-time="todo.startTime" :total-time="todo.totalTime" />
                 <button class="w-10 h-10 hover:cursor-pointer" @click="$emit('toggle-timer', todo.id)"
                     :disabled="todo.completed">
@@ -15,7 +15,8 @@
                         <span class="w-[25px] h-[25px] text-main hover:text-hover" v-else key="play">▶</span>
                     </Transition>
                 </button>
-                <div class="dropdown">
+                <!-- 汉堡按钮 -->
+                <div class="dropdown max-sm:scale-90">
                     <div tabindex="0" role="button" class="btn btn-circle btn-ghost">
                         <svg width="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             viewBox="0 0 24 24">
@@ -117,6 +118,8 @@ const formatDateTime = (date) => {
     background-color: #f9f9f9;
 }
 
+
+
 .todo-item.completed {
     background-color: #e8e8e8;
     opacity: 0.8;
@@ -143,11 +146,6 @@ const formatDateTime = (date) => {
     color: #999;
 }
 
-.todo-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 
 .timer-btn {
     padding: 8px 12px;
@@ -241,5 +239,17 @@ const formatDateTime = (date) => {
 
 .fade-leave-to {
     opacity: 0;
+}
+
+@media screen and (max-width: 640px) {
+    .todo-item {
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .todo-text {
+        font-size: 14px;
+    }
 }
 </style>

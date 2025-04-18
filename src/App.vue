@@ -1,5 +1,7 @@
 <template>
-  <div class="container bg-white/90 backdrop-blur-sm rounded-xl">
+  <div class="container bg-white/90 backdrop-blur-sm rounded-xl
+   max-sm:bg-white/70 max-sm:backdrop-blur-lg 
+  ">
     <header class="app-header">
 
       <div id="title-container"
@@ -91,6 +93,16 @@ const shakeTitle = () => {
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  .todo-list {
+    padding: 10px;
+  }
 }
 
 .app-header {
