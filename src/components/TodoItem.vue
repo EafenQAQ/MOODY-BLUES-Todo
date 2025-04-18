@@ -16,16 +16,17 @@
                     </Transition>
                 </button>
                 <!-- 汉堡按钮 -->
-                <div class="dropdown max-sm:scale-90">
-                    <div tabindex="0" role="button" class="btn btn-circle btn-ghost">
-                        <svg width="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                <div class="dropdown dropdown-end">
+                    <div tabindex="0" role="button" class="btn btn-circle btn-ghost ">
+                        <svg width="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             viewBox="0 0 24 24">
                             <path
                                 d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"
                                 fill="currentColor"></path>
                         </svg>
                     </div>
-                    <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-25 p-2 shadow-sm">
+                    <ul id="dropMenu" tabindex="0"
+                        class="dropdown-content  bg-white menu rounded-box w-25 p-2 shadow-sm">
                         <!-- 删除按钮 -->
                         <li><a @click="$emit('delete-todo', todo.id)"
                                 class="my-1 w-full flex justify-center bg-red-500 hover:bg-red-600">
@@ -122,8 +123,10 @@ const formatDateTime = (date) => {
 
 .todo-item.completed {
     background-color: #e8e8e8;
-    opacity: 0.8;
+
 }
+
+
 
 .todo-item.tracking {
     border-color: var(--color-primary);
@@ -134,6 +137,7 @@ const formatDateTime = (date) => {
     display: flex;
     align-items: center;
     flex: 1;
+
 }
 
 .todo-text {
@@ -154,6 +158,7 @@ const formatDateTime = (date) => {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+
 }
 
 .timer-btn:disabled {
