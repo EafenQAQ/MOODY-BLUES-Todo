@@ -1,6 +1,5 @@
 <template>
-    <div id="timer-container"
-        class="w-[8ch] box-border text-center max-sm:mr-2">
+    <div id="timer-container" class="w-[8ch] box-border text-center max-sm:mr-2">
         <div id="timer" class="timer" :class="{ active: isActive }">
             {{ displayTime }}
         </div>
@@ -33,7 +32,10 @@ const displayTime = computed(() => {
     let timeToDisplay = props.totalTime
 
     if (props.isActive && props.startTime) {
-        timeToDisplay += currentTime.value - new Date(props.startTime).getTime()
+        // 确保 startTime 是有效的时间戳
+        const startTimeMs = new Date(props.startTime).getTime()
+        // 确保计算结果为正数
+        timeToDisplay += Math.max(0, currentTime.value - startTimeMs)
     }
 
     return formatTime(timeToDisplay)
@@ -41,7 +43,7 @@ const displayTime = computed(() => {
 
 // 格式化时间
 const formatTime = (ms) => {
-    if (!ms) return '00:00:00'
+    if (!ms || ms < 0) return '00:00:00'
 
     const totalSeconds = Math.floor(ms / 1000)
     const hours = Math.floor(totalSeconds / 3600)

@@ -15,7 +15,7 @@
                         <span class="w-[25px] h-[25px] text-main hover:text-hover" v-else key="play">▶</span>
                     </Transition>
                 </button>
-                <!-- 汉堡按钮 -->
+                <!-- 汉堡按钮 -->  
                 <div class="dropdown dropdown-end">
                     <div tabindex="0" role="button" class="btn btn-circle btn-ghost ">
                         <svg width="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -50,7 +50,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div>  
         <div v-if="showDetails" class="time-records">
             <h4>时间记录</h4>
             <div v-if="todo.timeRecords.length === 0">
