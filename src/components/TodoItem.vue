@@ -8,14 +8,31 @@
             </div>
             <div id="todo-item-el" class="flex gap-2 items-center  ">
                 <timer :is-active="todo.isTracking" :start-time="todo.startTime" :total-time="todo.totalTime" />
-                <button class="w-10 h-10 hover:cursor-pointer" @click="$emit('toggle-timer', todo.id)"
-                    :disabled="todo.completed">
+                <button class="flex justify-center items-center  w-10 h-10 hover:cursor-pointer"
+                    @click="$emit('toggle-timer', todo.id)" :disabled="todo.completed">
                     <Transition name="fade" mode="out-in">
-                        <span class="w-[25px] h-[25px] text-red-500" v-if="todo.isTracking" key="pause">⏹</span>
-                        <span class="w-[25px] h-[25px] text-main hover:text-hover" v-else key="play">▶</span>
+                        <span class="w-[25px] h-[25px] text-red-500" v-if="todo.isTracking" key="pause">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 32 32">
+                                <g fill="none">
+                                    <path
+                                        d="M16 4C9.373 4 4 9.373 4 16s5.373 12 12 12s12-5.373 12-12S22.627 4 16 4zM2 16C2 8.268 8.268 2 16 2s14 6.268 14 14s-6.268 14-14 14S2 23.732 2 16zm8-4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-8z"
+                                        fill="currentColor"></path>
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="flex justify-center w-[25px] h-[25px] text-main hover:text-hover" v-else
+                            key="play">
+                            <svg width="18" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 448 512">
+                                <path
+                                    d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
                     </Transition>
                 </button>
-                <!-- 汉堡按钮 -->  
+                <!-- 汉堡按钮 -->
                 <div class="dropdown dropdown-end">
                     <div tabindex="0" role="button" class="btn btn-circle btn-ghost ">
                         <svg width="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -50,7 +67,7 @@
                     </ul>
                 </div>
             </div>
-        </div>  
+        </div>
         <div v-if="showDetails" class="time-records">
             <h4>时间记录</h4>
             <div v-if="todo.timeRecords.length === 0">
@@ -221,7 +238,7 @@ const formatDateTime = (date) => {
 }
 
 .fade-enter-active {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
     /* 可以调整过渡时长和缓动函数 */
 }
 
