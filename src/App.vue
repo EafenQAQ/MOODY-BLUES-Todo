@@ -18,7 +18,7 @@
 
     <todo-list ref="todoList" />
 
-    <footer class="flex flex-col justify-center items-center">
+    <footer class="flex flex-col justify-center items-center text-gray-500 mt-10">
       <p>忧郁蓝调 Todo List 应用 - {{ currentYear }}</p>
       <small>
         Copyright © 2025-{{ currentYear }} @智能的Eafen. All Rights Reserved.
