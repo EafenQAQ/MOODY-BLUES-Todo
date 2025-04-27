@@ -1,7 +1,7 @@
 <template>
   <div class="container bg-white/90 backdrop-blur-sm rounded-xl
    max-sm:bg-white/70 max-sm:backdrop-blur-lg 
-  ">
+  " id="appContainer">
     <header class="app-header">
 
       <div id="title-container"

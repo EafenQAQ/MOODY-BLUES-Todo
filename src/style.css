@@ -51,17 +51,6 @@ body {
 }
 
 
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-  }
-  button {
-    background-color: #1a1a1a;
-  }
-}
-
 @media screen and (max-width: 640px) {
   :root {
     font-size: 14px;
@@ -73,5 +62,12 @@ body {
 
   #app {
     padding: 0;
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(0, 0, 0, 0.87);
   }
 }

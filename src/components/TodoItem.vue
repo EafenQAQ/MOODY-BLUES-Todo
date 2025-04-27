@@ -8,7 +8,7 @@
             </div>
             <div id="todo-item-el" class="flex gap-2 items-center  ">
                 <timer :is-active="todo.isTracking" :start-time="todo.startTime" :total-time="todo.totalTime" />
-                <button class="flex justify-center items-center  w-10 h-10 hover:cursor-pointer"
+                <button class="flex justify-center items-center dark:bg-white/0 w-10 h-10 hover:cursor-pointer"
                     @click="$emit('toggle-timer', todo.id)" :disabled="todo.completed">
                     <Transition name="fade" mode="out-in">
                         <span class="w-[25px] h-[25px] text-red-500" v-if="todo.isTracking" key="pause">
